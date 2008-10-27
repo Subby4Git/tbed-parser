@@ -1,0 +1,60 @@
+#!/bin/sh
+#$ -S /bin/bash
+
+rm `find src/*.pyc`
+
+# load the experiment cofiguration
+source $1
+
+# expand the paths
+source ./settings.path
+
+mkdir $TBEDP_RESULTS_DIR
+
+echo $1 > $TBEDP_RESULTS_DIR/settings
+echo `date` >> $TBEDP_RESULTS_DIR/settings
+env | grep TBEDP | sort >> $TBEDP_RESULTS_DIR/settings
+
+date
+time ./src/tbedp-trainer.py -v -p \
+  --tmpData=$TBEDP_RESULTS_DIR \
+  --trainData=$TBEDP_TRAIN_DATA \
+  --outPickle=$TBEDP_OUT_PICKLE \
+  --outDecoderPickle=$TBEDP_OUT_DECODER_PICKLE \
+  --outRules=$TBEDP_OUT_RULES \
+  --outDict=$TBEDP_OUT_DICT \
+  --trgCond="$TBEDP_TRG_COND"
+  
+./src/tbedp-decoder.py -v \
+  --testData=$TBEDP_TEST_DATA_SEM \
+  --inPickle=$TBEDP_OUT_DECODER_PICKLE \
+  --outSem=$TBEDP_OUT_SEM_HYP \
+  --inDict=$TBEDP_OUT_DICT
+
+./src/tbedp-decoder.py -v \
+  --testData=$TBEDP_TEST_DATA_ASR \
+  --inPickle=$TBEDP_OUT_DECODER_PICKLE \
+  --outSem=$TBEDP_OUT_ASR_HYP \
+  --inDict=$TBEDP_OUT_DICT
+
+./src/tbedp-decoder.py -v \
+  --testData=$TBEDP_DEV_DATA_SEM \
+  --inPickle=$TBEDP_OUT_DECODER_PICKLE \
+  --outSem=$TBEDP_OUT_DEV_SEM_HYP \
+  --inDict=$TBEDP_OUT_DICT
+
+./src/tbedp-decoder.py -v \
+  --testData=$TBEDP_DEV_DATA_ASR \
+  --inPickle=$TBEDP_OUT_DECODER_PICKLE \
+  --outSem=$TBEDP_OUT_DEV_ASR_HYP \
+  --inDict=$TBEDP_OUT_DICT
+  
+./bin/cuedSemScore.pl $TBEDP_OUT_SEM_HYP $TBEDP_TEST_DATA_SEM
+./bin/cuedSemScore.pl $TBEDP_OUT_SEM_HYP $TBEDP_TEST_DATA_SEM > $TBEDP_OUT_SEM_HYP.rslt
+./bin/cuedSemScore.pl $TBEDP_OUT_ASR_HYP $TBEDP_TEST_DATA_ASR > $TBEDP_OUT_ASR_HYP.rslt
+
+date
+
+./src/profile.py --profileFile=$TBEDP_RESULTS_DIR/trn.train.profile > $TBEDP_RESULTS_DIR/trn.train.profile.txt
+
+echo `date` >> $TBEDP_RESULTS_DIR/settings
