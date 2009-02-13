@@ -1,9 +1,9 @@
 #labels Featured
-Introduction of the TBED (Transformation-Based Error-Driven Parser) parser.  
+The TBED (Transformation-Based Error-Driven Parser) parser aka TBL parser produces semantic annotation in form of frames and slots.  
 
-= Introduction =
+= Dialogue Act Semantic Scheme =
 
-The CUED dialogue act scheme is slot based semantics. Each dialogue act is composed of dialogue act type and slots. Each each dialogue act can have zero or more slots. Examples of dialogue acts are provided below:
+The CUED dialogue act scheme is frame and slot based semantics. Each dialogue act is composed of a dialogue act type and several slots. The dialogue acts are allowed to be without slots. Examples of dialogue acts are provided below:
 
 {{{
 i want to drink wine <=> inform(drinks=wine)
@@ -27,17 +27,6 @@ can i get phone number please <=> request(phone)
 can I get address and phone of the fountain inn <=> request(address,phone,name="Fountain Inn")
 }}}
 
-
-Current version of TBEDP only supports parsing of a slot item as an atomic element. Newer
-versions should be able to process separately slot name, slot equal sign, and
-slot value. Also it should be possible to to have rules triggered only on some
-parts of sentence and modifying only specific slot items in proximity. As a
-result I could generalize across different slot items e.g. != operator. TAG: http://code.google.com/p/tbed-parser/source/browse/#svn/tags/atomic-slot-item-parser
-
-
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+More details about the parser can be found in [http://code.google.com/p/tbed-parser/source/browse/trunk/doc/paper-1/is2008.pdf this article] (PDF).
