@@ -1,5 +1,5 @@
 #labels Featured
-= The TBL parser - Transformation-based learning for Semantic parsing = 
+= TBL for Semantic parsing = 
 
     _Friday, 13 January 2009_
     http://code.google.com/p/tbed-parser/
