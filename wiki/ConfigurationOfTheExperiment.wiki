@@ -17,21 +17,20 @@ export TBEDP_DEV_SEM_DEP_FILE=""
 
 export TBEDP_DB_DIR=debug_db
 
-export TBEDP_TRG_COND="{'nGrams':1, 'nStarGrams':1, 'tplGrams':1, 'speechAct':1, 'nSlots':1, 'hasSlots':0, 'DBItems':'replace', 'useDeps':0, 'nearestLeftPOSWord':0, 'nearestDepTreePOSWord':0, 'testLocality':1}"
+export TBEDP_TRG_COND="{'nGrams':1, 'nStarGrams':1, 'speechAct':1, 'nSlots':1, 'hasSlots':0, 'DBItems':'replace', 'useDeps':0, 'nearestLeftPOSWord':0, 'nearestDepTreePOSWord':0, 'testLocality':1}"
 
 }}}
 
   * The variables TBEDP_TRN_FILE, TBEDP_TRN_DEP_FILE, TBEDP_TST_SEM_FILE, TBEDP_TST_SEM_DEP_FILE, TBEDP_DEV_SEM_FILE, TBEDP_DEV_SEM_DEP_FILE are used to inform the parser where training, development and testind data are. Each file can also have complementary file with dependency relationships between words and POS tags.
   * The variable TBEDP_DB_DIR says where the database with lexical realizations for slot items is stored.  
   * The variable TBEDP_TRG_COND sets the training parameters of the TBL parser:
-    * 'nGrams':1
-    * 'nStarGrams':1
-    * 'tplGrams':1
-    * 'speechAct':1
-    * 'nSlots':1
-    * 'hasSlots':0
-    * 'DBItems':'replace'
-    * 'useDeps':0, 
-    * 'nearestLeftPOSWord':0
-    * 'nearestDepTreePOSWord':0
-    * 'testLocality':1
+    * 'nGrams': 0 - no n-gram, 1 - unigrams only, 2 - unigrams and bigrams, 3 - up to trigrams, 4 - up to four grams, fourgrams is the maximum
+    * 'nStarGrams': 0 - no skipping bigrams, 1 - skipping bigram skipping one word, 2,3 - skipping bigrams with up to 3 skipped words.
+    * 'speechAct': 0 - do not use hypothesised dialogue act type in triggers, 1 - use it
+    * 'nSlots': 0 - do not use hypothesised slots in triggers, 1 - use it
+    * 'hasSlots': 0 - do not trigger on presence of slots, 1 - use it
+    * 'DBItems':'replace': replace - replace lexical realizations of slot values with category labels, none - do nothing 
+    * 'useDeps': 0 - do not load and use *.dep files, 1 - use it 
+    * 'nearestLeftPOSWord': 0 - do not generate advanced lexical features using POS tags, 1 - use it
+    * 'nearestDepTreePOSWord': 0 - do not use features generated from dependency trees which are in the *.dep files
+    * 'testLocality': 0 - do not test locality of triggers of substitution operation, 1 - use it
