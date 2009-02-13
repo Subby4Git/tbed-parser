@@ -2,7 +2,6 @@
 = TBL for Semantic parsing = 
 
     _Friday, 13 January 2009_
-    http://code.google.com/p/tbed-parser/
 
     Copyright (C) 2008-2009, Filip Jurcicek, filip.jurcicek@gmail.com
 
