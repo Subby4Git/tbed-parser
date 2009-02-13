@@ -71,7 +71,7 @@ In the ideal case, it would be the same as the original test file *debug-test.se
 
 The file *debug-test.sem.hyp.algn* describes how the words (lexical realizations of slot values) were aligned with the slot values.
 
-The file *debug-test.sem.hyp.alnz* provides list of parsing errors and explanation of the parsing process.
+The file *debug-test.sem.hyp.anlz* provides list of parsing errors and explanation of the parsing process.
 {{{
 ********************************************************************************
 Substituted slot items (precision error)
