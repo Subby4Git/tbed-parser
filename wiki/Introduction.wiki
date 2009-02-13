@@ -1,0 +1,41 @@
+#labels Featured
+Introduction of the TBED (Transformation-Based Error-Driven Parser) parser.  
+
+= Introduction =
+
+{{{
+i want to drink wine <=> inform(drinks=wine)
+near the castle <=> inform(near=Castle)
+serves beer <=> inform(drinks=beer)
+does not serve wine <=> inform(drinks!=wine)
+serves no wine <=> inform(drinks!=wine)
+serves no beer <=> inform(drinks!=beer)
+restaurant which serves wine <=> inform(type=restaurant,drinks=wine)
+does serve wine serves not beer <=> inform(drinks=wine,drinks!=beer)
+it is not near castle and serve wine <=> inform(near!=Castle,drinks=wine)
+restaurant near the castle <=> inform(near=Castle,type=restaurant)
+somewhere not near the castle <=> inform(near!=Castle)
+
+do they serve draft beer <=> confirm(drinks=beer)
+is it somewhere near castle <=> confirm(near=Castle)
+is it near castle <=> confirm(near=Castle)
+is it near fountain <=> confirm(near="Fountain Inn")
+
+can i get phone number please <=> request(phone)
+can I get address and phone of the fountain inn <=> request(address,phone,name="Fountain Inn")
+}}}
+
+
+Current version of TBEDP only supports parsing of a slot item as an atomic element. Newer
+versions should be able to process separately slot name, slot equal sign, and
+slot value. Also it should be possible to to have rules triggered only on some
+parts of sentence and modifying only specific slot items in proximity. As a
+result I could generalize across different slot items e.g. != operator. TAG: http://code.google.com/p/tbed-parser/source/browse/#svn/tags/atomic-slot-item-parser
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
