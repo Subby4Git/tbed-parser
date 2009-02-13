@@ -5,12 +5,13 @@ This section describe basic usage of the TBL parser.
 
 To run our scripts, you will need working 
   * Linux environment, Python (minimum v 2.5), 
-  * scipy
-  * RASP
+  * [http://www.scipy.org/ SciPy] is needed for its NumPy.
+  * [http://matplotlib.sourceforge.net/ matplotlib] is needed for its plotting capabilities.
+  * [http://www.informatics.susx.ac.uk/research/groups/nlp/rasp/ The RASP System] is needed for its POS tagging and dependency parsing capabilities. If you are not interested in long-range features than you do not need RASP.
 
 = Installation =
 
-Checkout the project into your home directory. The name of the directory for the extended HVS parser should be `extended-HVS-parser`. If you want to have read/write access to the project SVN tree use the following command (you also have to be a contributor in this project)
+Checkout the project into your home directory. The name of the directory for the TBL parser should be `tbed-parser`. If you want to have read/write access to the project SVN tree use the following command (you also have to be a contributor in this project)
 {{{
 svn checkout https://extended-hidden-vector-state-parser.googlecode.com/svn/trunk extended-HVS-parser --username YOUR-USER-NAME
 }}}
