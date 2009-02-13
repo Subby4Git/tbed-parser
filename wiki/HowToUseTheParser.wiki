@@ -21,6 +21,8 @@ svn checkout http://tbed-parser.googlecode.com/svn/trunk/ tbed-parser
 }}}
 the read-only version.
 
+Then add the *"~/tbed-parser/bin"* directory into your PATH.
+
 = Run an example =
 
 Go to the  "~/tbed-parser/" directory:
