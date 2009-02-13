@@ -32,7 +32,7 @@ cd ~/tbed-parser
 
 Run command from the bash command line:
 {{{
-./train ./experiment/
+./train ./experiment/debug
 }}}
 Consequently, in the directory "results", a new directory with results of the experiment will be created. The directory will be named as "YEAR-MONTH-DAY-HOUR-MINUTE" and its content will be similar to the following listing:
 {{{
