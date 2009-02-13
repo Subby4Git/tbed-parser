@@ -27,7 +27,7 @@ can i get phone number please <=> request(phone)
 can I get address and phone of the fountain inn <=> request(address,phone,name="Fountain Inn")
 }}}
 
-Above you can see training data which you can feed into the TBL parser. There is one training example on each line. The utterance and the semantics are separated by the string `<=>`. The semantics is composed of the goal and several slots. Each slot is composed of of the slot name , the equal sign and the slot value. The goal, the slot name, and the slot value are domain dependant. The parser is capable to use arbitrary number of goals, slot names and slot values. Only the equal sign is limited to `=` and `!=`.
+Above you can see training data which you can feed into the TBL parser. There is one training example on each line. The utterance and the semantics are separated by the string "<=>". The semantics is composed of the goal and several slots. Each slot is composed of of the slot name, the equal sign and the slot value. The goal, the slot name, and the slot value are domain dependant. The parser is capable to use arbitrary number of goals, slot names and slot values. Only the equal sign is limited to "=" and "!=".
 
 Based on this data, the TBL parser tries to learn a sequence of transformation rules which iteratively correct the initial semantics.
 
