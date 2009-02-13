@@ -41,6 +41,8 @@ debug-dev.sem.hyp.rslt  debug-test.sem.hyp.rslt  debug-train.sem.hyp.rslt  rules
 debug-dev.sem.hyp.stat  debug-test.sem.hyp.stat  debug-train.sem.hyp.stat  rules.pckl-decoder
 }}}
 
+Once you are in this directory, you can use commands like `grph-atis` and `grph-towninfo`.  The purpose of this commands is to plot the F-measure of the TBL parser for different number of used rules on the training, development and test data.
+
 = Results = 
 
 The file *rules.txt* contains learned rules. For example:
