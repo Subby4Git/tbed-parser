@@ -29,4 +29,4 @@ can I get address and phone of the fountain inn <=> request(address,phone,name="
 
 = Details =
 
-More details about the parser can be found in [http://code.google.com/p/tbed-parser/source/browse/trunk/doc/paper-1/is2008.pdf this article] (PDF).
+More details about the parser how the parsing works can be found in [http://tbed-parser.googlecode.com/svn/trunk/doc/paper-1/is2008.pdf this article - draft] (PDF).
