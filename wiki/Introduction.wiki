@@ -3,6 +3,8 @@ Introduction of the TBED (Transformation-Based Error-Driven Parser) parser.
 
 = Introduction =
 
+The CUED dialogue act scheme is slot based semantics. Each dialogue act is composed of dialogue act type and slots. Each each dialogue act can have zero or more slots. Examples of dialogue acts are provided below:
+
 {{{
 i want to drink wine <=> inform(drinks=wine)
 near the castle <=> inform(near=Castle)
