@@ -13,27 +13,68 @@ To run our scripts, you will need working
 
 Checkout the project into your home directory. The name of the directory for the TBL parser should be `tbed-parser`. If you want to have read/write access to the project SVN tree use the following command (you also have to be a contributor in this project)
 {{{
-svn checkout https://extended-hidden-vector-state-parser.googlecode.com/svn/trunk extended-HVS-parser --username YOUR-USER-NAME
+svn checkout http://tbed-parser.googlecode.com/svn/trunk/ tbed-parser --username YOUR-USER-NAME
 }}}
 or
 {{{
-svn checkout http://extended-hidden-vector-state-parser.googlecode.com/svn/trunk extended-HVS-parser
+svn checkout http://tbed-parser.googlecode.com/svn/trunk/ tbed-parser
 }}}
 the read-only version.
 
-= Full run example =
+= Run an example =
 
-Go to the directory "~/extended-HVS-parser/semantics-4":
+Go to the  "~/tbed-parser/" directory:
 {{{
-cd ~/extended-HVS-parser/semantics-4
+cd ~/tbed-parser
 }}}
 
 Run command from the bash command line:
 {{{
-./semantics.py all -vvv
+./train ./experiment/
+}}}
+Consequently, in the directory "results", a new directory with results of the experiment will be created. The directory will be named as "YEAR-MONTH-DAY-HOUR-MINUTE" and its content will be similar to the following listing:
+{{{
+debug-dev.sem.hyp       debug-test.sem.hyp       debug-train.sem.hyp       debug-train.sem.pckl-bestrules  rules.txt
+debug-dev.sem.hyp.algn  debug-test.sem.hyp.algn  debug-train.sem.hyp.algn  debug-train.sem.pckl-decoder    settings
+debug-dev.sem.hyp.anlz  debug-test.sem.hyp.anlz  debug-train.sem.hyp.anlz  debug-train.sem.rules
+debug-dev.sem.hyp.rslt  debug-test.sem.hyp.rslt  debug-train.sem.hyp.rslt  rules.pckl-bestrules
+debug-dev.sem.hyp.stat  debug-test.sem.hyp.stat  debug-train.sem.hyp.stat  rules.pckl-decoder
 }}}
 
-You can also use the shortcut command:
+= Configuration of the experiment = 
+
+The parameter of the *train* command is configuration of file of an experiment. The debug experiment has the following configuration file:
 {{{
-./_full_run_example
+#!/bin/sh
+#$ -S /bin/bash
+
+export TBEDP_TRN_FILE=debug-train.sem
+export TBEDP_TRN_DEP_FILE=""
+export TBEDP_TST_SEM_FILE=debug-test.sem
+export TBEDP_TST_SEM_DEP_FILE=""
+export TBEDP_DEV_SEM_FILE=debug-dev.sem
+export TBEDP_DEV_SEM_DEP_FILE=""
+
+export TBEDP_DB_DIR=debug_db
+
+export TBEDP_TRG_COND="{'nGrams':1, 'nStarGrams':1, 'tplGrams':1, 'speechAct':1, 'nSlots':1, 'hasSlots':0, 'DBItems':'replace', 'useDeps':0, 'nearestLeftPOSWord':0, 'nearestDepTreePOSWord':0, 'testLocality':1}"
+
 }}}
+
+  * The variables TBEDP_TRN_FILE, TBEDP_TRN_DEP_FILE, TBEDP_TST_SEM_FILE, TBEDP_TST_SEM_DEP_FILE, TBEDP_DEV_SEM_FILE, TBEDP_DEV_SEM_DEP_FILE are used to inform the parser where training, development and testind data are. Each file can also have complementary file with dependency relationships between words and POS tags.
+  * The variable TBEDP_DB_DIR says where the database with lexical realizations for slot items is stored.  
+  * The variable TBEDP_TRG_COND sets the training parameters of the TBL parser:
+    * 'nGrams':1
+    * 'nStarGrams':1
+    * 'tplGrams':1
+    * 'speechAct':1
+    * 'nSlots':1
+    * 'hasSlots':0
+    * 'DBItems':'replace'
+    * 'useDeps':0, 
+    * 'nearestLeftPOSWord':0
+    * 'nearestDepTreePOSWord':0
+    * 'testLocality':1
+
+
+
