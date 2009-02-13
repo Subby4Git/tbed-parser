@@ -41,6 +41,10 @@ debug-dev.sem.hyp.rslt  debug-test.sem.hyp.rslt  debug-train.sem.hyp.rslt  rules
 debug-dev.sem.hyp.stat  debug-test.sem.hyp.stat  debug-train.sem.hyp.stat  rules.pckl-decoder
 }}}
 
+= Next = 
+
+[ConfigurationOfTheExperiment See how to configure experiment.]
+
 = Configuration of the experiment = 
 
 The parameter of the *train* command is configuration of file of an experiment. The debug experiment has the following configuration file:
@@ -75,6 +79,4 @@ export TBEDP_TRG_COND="{'nGrams':1, 'nStarGrams':1, 'tplGrams':1, 'speechAct':1,
     * 'nearestLeftPOSWord':0
     * 'nearestDepTreePOSWord':0
     * 'testLocality':1
-
-
 
