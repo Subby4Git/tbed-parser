@@ -30,7 +30,7 @@ export TBEDP_TRG_COND="{'nGrams':1, 'nStarGrams':1, 'speechAct':1, 'nSlots':1, '
     * 'nSlots': 0 - do not use hypothesised slots in triggers, 1 - use it
     * 'hasSlots': 0 - do not trigger on presence of slots, 1 - use it
     * 'DBItems':'replace': replace - replace lexical realizations of slot values with category labels, none - do nothing 
-    * 'useDeps': 0 - do not load and use *.dep files, 1 - use it 
+    * 'useDeps': 0 - do not load and use `*`.dep files, 1 - use it 
     * 'nearestLeftPOSWord': 0 - do not generate advanced lexical features using POS tags, 1 - use it
-    * 'nearestDepTreePOSWord': 0 - do not use features generated from dependency trees which are in the *.dep files
+    * 'nearestDepTreePOSWord': 0 - do not use features generated from dependency trees which are in the `*`.dep files
     * 'testLocality': 0 - do not test locality of triggers of substitution operation, 1 - use it
