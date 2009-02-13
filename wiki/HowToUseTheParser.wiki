@@ -1,5 +1,5 @@
 #labels Featured
-This section describe basic usage of the TBL parser.
+This section describe the basic usage of the TBL parser.
 
 = Requirements =
 
