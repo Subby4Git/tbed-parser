@@ -27,6 +27,9 @@ can i get phone number please <=> request(phone)
 can I get address and phone of the fountain inn <=> request(address,phone,name="Fountain Inn")
 }}}
 
+The TBL parser tries to produce this type of semantics of any input word sequence. Of course, only for in domain utterances the output is acceptable.
+
+
 = Details =
 
 More details about the parser how the parsing works can be found in [http://tbed-parser.googlecode.com/svn/trunk/doc/paper-1/is2008.pdf this article - draft] (PDF).
