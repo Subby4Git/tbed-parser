@@ -138,4 +138,4 @@ SemScore Results: Ref contains 9 acts; 13 items
 
 = Next = 
 
-[ConfigurationOfTheExperiment See how to configure experiment.]
+[ConfigurationOfTheExperiment Configuration of the experiment]
