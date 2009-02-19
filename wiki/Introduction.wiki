@@ -1,4 +1,3 @@
-#labels Featured
 The TBED (Transformation-Based Error-Driven Parser) parser aka TBL parser produces semantic annotation in form of frames and slots.  
 
 = Details =
