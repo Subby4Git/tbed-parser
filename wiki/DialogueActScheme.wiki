@@ -1,7 +1,7 @@
 #labels Featured
 The TBED (Transformation-Based Error-Driven Parser) parser aka TBL parser produces semantic annotation in form of frames and slots.  
 
-= Dialogue Act Semantic Scheme =
+= Dialogue Act Scheme =
 
 The CUED dialogue act scheme is frame and slot based semantics. Each dialogue act is composed of a dialogue act type and several slots. The dialogue acts are allowed to be without slots. Examples of dialogue acts are provided below:
 
