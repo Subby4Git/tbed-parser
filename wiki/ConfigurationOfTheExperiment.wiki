@@ -1,9 +1,9 @@
 #labels Featured
-This section describes configuration of experiments in the "experiments" directory.
+This section describes how to prepare an experiments. Every experiment has one configuration file in the "experiments" directory. It is simple shell script file which define several variables. Some of the variables are used by the *traisn* script. Some of them are just passed to the used training and decoding scripts.
 
 = Configuration of the experiment = 
 
-The parameter of the *train* command is configuration of file of an experiment. The debug experiment has the following configuration file:
+The parameter of the *train* command is the path and the name to the configuration file of an experiment. The debug experiment has the following configuration file:
 {{{
 #!/bin/sh
 #$ -S /bin/bash
